@@ -47,6 +47,28 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
  } 
 </script>
 
+<script src="https://www.google.com/jsapi"></script>
+  <script>
+   google.load("visualization", "1", {packages:["corechart"]});
+   google.setOnLoadCallback(drawChart);
+   function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+     ['Месяц', 'Аватар', 'Мстители:Финал'],
+     ['Бюджет', 237000000, 356000000],
+     ['Сборы в США', 760507625, 830491359],
+     ['Сборы в Мире', 2782275172, 2742491359]
+    ]);
+    var options = {
+     title: 'Кассовые сборы фильмов',
+	 colors: ['#A65600', '#FFA340'],
+     hAxis: {title: 'Расход/Доход'},
+     vAxis: {title: 'Долларов США'}
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById('films'));
+    chart.draw(data, options);
+   }
+  </script>
+  
 </head>
 
 <body>
@@ -60,6 +82,24 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 			
 			<header>
 				<div class="top_wrap">
+				<div class="date"><div class="orange">
+							<script type="text/javascript">var day = new Date(); document.write(day.getDate());</script></div>
+							<div class="siniy"><script type="text/javascript">
+								var day = new Date(); 
+								var month=new Array(12);
+								month[0]="января";
+								month[1]="февраля";
+								month[2]="марта";
+								month[3]="апреля";
+								month[4]="мая";
+								month[5]="июня";
+								month[6]="июля";
+								month[7]="августа";
+								month[8]="сентября";
+								month[9]="октября";
+								month[10]="ноября";
+								month[11]="декабря";
+								document.write(month[day.getMonth()]);</script></div></div>
 					<a href="#">
 						<div class="logo">
 							<span></span>
@@ -94,29 +134,14 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 			<div class="content">
 				<section>
 					<div class="description">
-						<div class="date"><div class="orange">
-							<script type="text/javascript">var day = new Date(); document.write(day.getDate());</script></div>
-							<div class="siniy"><script type="text/javascript">
-								var day = new Date(); 
-								var month=new Array(12);
-								month[0]="января";
-								month[1]="февраля";
-								month[2]="марта";
-								month[3]="апреля";
-								month[4]="мая";
-								month[5]="июня";
-								month[6]="июля";
-								month[7]="августа";
-								month[8]="сентября";
-								month[9]="октября";
-								month[10]="ноября";
-								month[11]="декабря";
-								document.write(month[day.getMonth()]);</script></div></div>
+						
 						<div class="title">
-							Мировые сборы «Мстителей: Финал» всего в $60 млн от «Аватара»
+							Боевик «Мстители: Финал» снова покажут в кинотеатрах
 						</div>
 						<div class="text">
-							<p>«Мстители: Финал» продолжают приближаться по сборам к «Аватару». Общие сборы «Финала» составляют 2,73 миллиарда долларов, а разница между «Аватаром» достигла всего 58 миллионов долларов. Осталось со всем немного, чтобы стать самым кассовым фильмом всех времен. «Финал» уже обогнал по сборам «Аватара» на территории США. Эта сумма преодолела отметку в $800 млн. Но впереди еще «Звёздные войны: Пробуждение Силы» с рекордной суммой в $936,6 млн.
+							<p>Боевик «Мстители: Финал» снова покажут в кинотеатрах
+								Пока что у финальной части «Мстителей» не получилось обогнать культовый «Аватар» по сборам в мировом прокате. Но фильму дадут ещё один шанс. Президент Marvel Studios Кевин Файги объявил, что «Мстители: Финал» вернут в кинотеатры.
+								Дополнительный прокат стартует в следующие выходные, 28 июня. Файги не сообщил подробности, известно лишь, что в картину добавят дополнительные сцены. Хотя перед премьерой кинокомикса создатели уверяли, что из него практически ничего не вырезали.
 								</p> 
 						</div>	
 					</div>
@@ -152,8 +177,12 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 						
 					</div>
 					<div class="text2">
-						Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.
-					</div>	
+						<p>
+							Неизвестно, покажут ли «режиссёрскую версию» последних «Мстителей» в российском прокате, хотя уже подтверждён повторный показ в Курске. Впрочем, поклонникам киновселенной Marvel и так есть чего ждать: 4 июля состоится российская премьера фильма «Человек-паук: Вдали от дома».
+						В настоящий момент сборы «Мстителей» достигли 2,763 миллиарда долларов. «Аватар» пока что впереди, но всего на 44 миллиона долларов.
+						</p>
+					</div>
+					<div id="films" style="width: 100%; height: 400px;"></div>					
 				</section>
 				<aside>
 					<div class="as_title_wrap">
@@ -169,7 +198,9 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 								<div class="pic_wrap"><img src="assets/img/moda1.jpg" alt=""></div>
 								<div class="text_wrap">
 									<div class="blue">Лунный свет</div>
-									<div class="text_description">Мальчик, подросток, мужчина… Ему выпало родиться и жить в Майами, где миром правят наркотики и деньги. В мучительном поиске правды и принятии самого себя, преодолевая драму в семье и предательство друзей, он должен сделать выбор своего пути. Но может ли человек изменить судьбу?</div>
+									<div class="text_description"> Мальчик, подросток, мужчина… Ему выпало родиться и жить в Майами, где миром правят наркотики и деньги. В мучительном поиске правды и принятии самого себя, преодолевая драму в семье и предательство друзей, он должен сделать выбор своего пути. Но может ли человек изменить судьбу?	
+									</div>
+									
 								</div>
 							</div>
 							<div class="news">
@@ -203,7 +234,7 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 								</div>
 							</div>
 							<div class="news">
-								<div class="pic_wrap"><img src="assets/img/film2.jpg" alt=""></div>
+									<div class="pic_wrap"><img src="assets/img/film2.jpg" alt=""></div>
 								<div class="text_wrap">
 									<div class="blue">Джокер </div>
 									<div class="text_description">Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.</div>
@@ -246,10 +277,7 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 							</div>
 						</div>	
 							</li>
-						</ul>
-						
-						
-					
+						</ul>			
 						
 						<div class="sub_wrap"></div>
 						
@@ -259,27 +287,25 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 					<div class="like_label"><div>ПОНРАВИЛОСЬ ПОСЕТИТЕЛЯМ</div></div>
 					<div class="sub-menu2"> 
 							<div class="news2 news2_first">
-								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
+								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/potter3.jpg" alt=""></div>
 								<div class="text_wrap2">
-									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
+									<div><div class="text_description">Жизнь десятилетнего Гарри Поттера нельзя назвать сладкой: его родители умерли, едва ему исполнился год, а от дяди и тётки, взявших сироту на воспитание, достаются лишь тычки да подзатыльники. Но в одиннадцатый день рождения Гарри всё меняется. Странный гость, неожиданно появившийся на пороге, приносит письмо, из которого мальчик узнаёт, что на самом деле он чистокровный волшебник и принят в Хогвартс — школу магии.
+										</div>
+									<br><br><a href="#">Medication »</a></div>
+								</div>
 								</div>
 							</div>
 							<div class="news2">
-								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
+								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/son.jpg" alt=""></div>
 								<div class="text_wrap2">
-									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
+									<div><div class="text_description">«Соннная Лощина» — американский мистико-приключенческий телесериал, осовремененная адаптация рассказа «Легенда о Сонной Лощине», написанного Вашингтоном Ирвингом. Сериал создан Алексом Куртцманом, Роберто Орси, Филлипом Исковым и Леном Уайзманом.<br><br><a href="#">Medication »</a></div>
 								</div>
-							</div>
+							</div></div>
 							<div class="news2">
-								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
+								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/izgoy.jpg" alt=""></div>
 								<div class="text_wrap2">
-									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
+									<div><div class="text_description">Фильм рассказывает о событиях, которые предшествовали четвёртому эпизоду «Звёздных Войн». Узнав о том, что Империя построила самую совершенную боевую станцию, способную уничтожать целые планеты, Альянс Повстанцев собирает особый отряд под руководством бывшей преступницы Джин Эрсо, целью которого является чертежи совершенного оружия Империи.<br><br><a href="#">Medication »</a></div>
 								</div>
-							</div>
-							<div class="news2">
-								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
-								<div class="text_wrap2">
-									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
 								</div>
 							</div>
 					</div>
@@ -290,10 +316,9 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 <script> /* начало скрипта */
-        $('.text_description').click(function(){
-            $(this).toggleClass('active')
-        })
-       
+			$('.text_wrap').click(function(){
+				$(this).toggleClass('active')
+			})    
     </script> 
 	<script>	
 			/*$('.gamb').click(function(){

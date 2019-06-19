@@ -230,7 +230,7 @@ section .description{
 	width: 68px;
 	height: 73px;
 	left: -77px;
-	top: 9px;
+	
 	user-select: none;
 	color: #ffffff;
 	text-align: center;
@@ -242,9 +242,11 @@ section .description{
 	background-color: #f78f1d;
 	font-size: 35px;
 	font-weight: bold;
+	position:fixed;
 }
 .siniy{
 	display: block;
+	position:fixed;
 	width: 62px;
 	height: 27px;
 	background-color: #A65600;
@@ -253,6 +255,10 @@ section .description{
 	text-align: left;
 	padding-left: 7px;
 	box-sizing: border-box;
+	margin-top:42px;
+	margin-left:12px;
+	
+	
 }
 section .title{
 	font-size: 35px;
@@ -344,13 +350,11 @@ section p{
 	
 }
 .text2{
-	height: 200px;
+	height: auto;
 	text-align: justify;
 	text-align-last: left;
 	letter-spacing: 0.1px;
 	line-height: 20px;
-	margin-bottom: 25px;
-	overflow: hidden;
 }
 .text2.active{
 	height: auto;
@@ -362,6 +366,8 @@ aside{
 	float: left;
 	width: 352px;
 	box-sizing: border-box;
+	position:relative;
+	height:100%;
 }
 .as_title{
 	position: relative;
@@ -393,9 +399,9 @@ aside{
 .categ{
 	width: 352px;
 	margin-top: 4px;
-	height: auto;
+	min-height:400px; 
+	max-height: 700px;
 	position: relative;
-	
 }
 .menu_but{
 	position: relative;
@@ -519,25 +525,24 @@ aside{
 }
 .text_wrap{
 	display: inline-block;
+	position:relative;
 	width: 235px;
 	padding-left: 13px;
+	padding-top:5px;
 	margin-top: 0px;
 	margin-left: -3px;
 	float: left;
+	text-align: justify;
+	text-align-last: left;
 }
-.text_wrap div{
-	display: inline-block;
+.text_wrap.active{
+    overflow: visible;
+    height: auto;
 }
 .text_description{
 	font-size: 12px;
 	text-align: justify;
 	text-align-last: left;
-    height: 90px;
-	overflow:hidden;
-}
-.text_description.active{
-    overflow: visible;
-    height: auto;
 }
 .news_last{
 	border: none;
@@ -555,8 +560,8 @@ aside{
 	display: block;
 	position: relative;
 	width: 352px;
-	height: 395px;
-	margin-bottom:200px
+	height: 300px;
+	margin-bottom:250px;
 }
 .sub-menu{
 	display: none;
@@ -610,6 +615,7 @@ aside{
 }
 .sub-menu2{
 	text-align: center;
+	position:relative;
 }
 .news2{
 	display: inline-block;
