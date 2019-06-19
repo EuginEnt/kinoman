@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+@media (max-width: 1161px) 
+{
+	.date{
+		display: none;
+	}
+	
+}

@@ -1,0 +1,325 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Киноман</title>
+<link href="assets/css/adaptation.css" rel="stylesheet" type="text/css">
+<link href="assets/css/normal.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<script type="text/javascript">
+var lastResFind=""; // последний удачный результат
+var copy_page=""; // копия страницы в исходном виде
+function TrimStr(s) {
+     s = s.replace( /^\s+/g, '');
+  return s.replace( /\s+$/g, '');
+}
+function FindOnPage(inputId) {//ищет текст на странице, в параметр передается ID поля для ввода
+  var obj = window.document.getElementById(inputId);
+  var textToFind;
+ 
+  if (obj) {
+    textToFind = TrimStr(obj.value);//обрезаем пробелы
+  } else {
+		alert("Введенная фраза не найдена");
+    return;
+  }
+  if (textToFind == "") {
+    alert("Вы ничего не ввели");
+    return;
+  }
+  
+  if(document.body.innerHTML.indexOf(textToFind)=="-1")
+	alert("Ничего не найдено, проверьте правильность ввода!");
+  else
+  {
+	if(copy_page.length>0)
+        document.body.innerHTML=copy_page;
+	else copy_page=document.body.innerHTML;
+
+	document.body.innerHTML = document.body.innerHTML.replace(eval("/name="+lastResFind+"/gi")," ");//стираем предыдущие якори для скрола
+	document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:blue'>"+textToFind+"</a>"); //Заменяем найденный текст ссылками с якорем;
+	lastResFind=textToFind; // сохраняем фразу для поиска, чтобы в дальнейшем по ней стереть все ссылки
+	window.location = '#'+textToFind;//перемещаем скрол к последнему найденному совпадению
+	
+	
+  }
+ } 
+</script>
+
+</head>
+
+<body>
+	<div class="page_wrap">
+		<div class="decorations">
+			<div class="decoration1"></div>
+			<div class="decoration2"></div>
+			<div class="decoration3"></div>
+		</div>	
+		<div class="container">
+			
+			<header>
+				<div class="top_wrap">
+					<a href="#">
+						<div class="logo">
+							<span></span>
+							<div>Киноман</div>
+						</div>
+					</a>
+					<div class="search">
+						<div class="pos">
+							<input type="search" id="text-to-find" value=""> 							
+							<button onclick="javascript: FindOnPage('text-to-find'); return false;">ПОИСК</button>
+						</div>	
+					</div>
+					<div class="sm">
+						<div class="sm_pic"><img src="assets/img/sm1.png" alt=""></div>
+						<div class="sm_pic"><img src="assets/img/sm2.png" alt=""></div>
+						<div class="sm_pic"><img src="assets/img/sm3.png" alt=""></div>
+					</div>
+				</div>
+				<div class="nav_wrap">
+					<a class="gamb"><i class="fas fa-bars"></i></a>
+					<ul class="menuwit">
+						<a href="#"><li id="item1">ГЛАВНАЯ</li></a>
+						<a href="#"><li id="item2">КИНО</li></a>
+						<a href="#"><li id="item3">МАГАЗИН</li></a>
+						<a href="#"><li id="item4">ПРОЕКТЫ</li></a>
+						<a href="#"><li id="item5">НОВОСТИ</li></a>
+						<a href="#"><li id="item6">АРХИВ</li></a>
+						<a href="#"><li id="item_last">КОНТАКТЫ</li></a>
+					</ul>
+				</div>	
+			</header>
+			<div class="content">
+				<section>
+					<div class="description">
+						<div class="date"><div class="orange">
+							<script type="text/javascript">var day = new Date(); document.write(day.getDate());</script></div>
+							<div class="siniy"><script type="text/javascript">
+								var day = new Date(); 
+								var month=new Array(12);
+								month[0]="января";
+								month[1]="февраля";
+								month[2]="марта";
+								month[3]="апреля";
+								month[4]="мая";
+								month[5]="июня";
+								month[6]="июля";
+								month[7]="августа";
+								month[8]="сентября";
+								month[9]="октября";
+								month[10]="ноября";
+								month[11]="декабря";
+								document.write(month[day.getMonth()]);</script></div></div>
+						<div class="title">
+							Мировые сборы «Мстителей: Финал» всего в $60 млн от «Аватара»
+						</div>
+						<div class="text">
+							<p>«Мстители: Финал» продолжают приближаться по сборам к «Аватару». Общие сборы «Финала» составляют 2,73 миллиарда долларов, а разница между «Аватаром» достигла всего 58 миллионов долларов. Осталось со всем немного, чтобы стать самым кассовым фильмом всех времен. «Финал» уже обогнал по сборам «Аватара» на территории США. Эта сумма преодолела отметку в $800 млн. Но впереди еще «Звёздные войны: Пробуждение Силы» с рекордной суммой в $936,6 млн.
+								</p> 
+						</div>	
+					</div>
+					<div class="slides_wrap">
+						<div class="place">
+						</div>
+						<ul  class="slides_butt">
+							<li class="butt">
+								<input type="radio" name="slides" id="slide1" checked>
+								<label for="slide1" class="ramka3 butt1"></label>
+								<img src="assets/img/min_slide.png" alt="">
+								<div class="big_pic big_pic1"><img src="assets/img/big_slide.png" alt=""></div>
+							</li>
+							<li class="butt">
+								<input type="radio" name="slides" id="slide2">
+								<label for="slide2" class="ramka3 butt2"></label>
+								<img src="assets/img/min_slide2.png" alt="">
+								<div class="big_pic big_pic2"><img src="assets/img/big_slide2.png" alt=""></div>
+							</li>
+							<li class="butt">
+								<input type="radio" name="slides" id="slide3">
+								<label for="slide3" class="ramka3 butt3"></label>
+								<img src="assets/img/min_slide3.png" alt="">
+								<div class="big_pic big_pic3"><img src="assets/img/big_slide3.png" alt=""></div>
+							</li>
+							<li class="butt  butt4">
+								<input type="radio" name="slides" id="slide4">
+								<label for="slide4" class="ramka3 butt4"></label>
+								<img src="assets/img/min_slide4.png" width="150px" alt="">
+								<div class="big_pic big_pic4"><img src="assets/img/big_slide4.png" alt=""></div>
+							</li>
+						</ul>
+						
+					</div>
+					<div class="text2">
+						Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.Оставшиеся в живых члены команды Мстителей и их союзники должны разработать новый план, который поможет противостоять разрушительным действиям могущественного титана Таноса. После наиболее масштабной и трагической битвы в истории они не могут допустить ошибку.
+					</div>	
+				</section>
+				<aside>
+					<div class="as_title_wrap">
+						<div class="as_title"><div>ИНТЕРЕСНОЕ</div></div>
+					</div>
+					<div class="categ">
+						<ul class="buttons">
+							<li class="menu_but" id="item7">
+							<input type="radio" name="tabs" id="tab-1" checked>
+							<label for="tab-1" id="first">МОДА</label>
+							<div class="sub-menu" id="sub-menu1"> 
+							<div class="news">
+								<div class="pic_wrap"><img src="assets/img/moda1.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Лунный свет</div>
+									<div class="text_description">Мальчик, подросток, мужчина… Ему выпало родиться и жить в Майами, где миром правят наркотики и деньги. В мучительном поиске правды и принятии самого себя, преодолевая драму в семье и предательство друзей, он должен сделать выбор своего пути. Но может ли человек изменить судьбу?</div>
+								</div>
+							</div>
+							<div class="news">
+								<div class="pic_wrap"><img src="assets/img/moda2.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Лед </div>
+									<div class="text_description">С самого детства Надя верила в чудеса. Она представляла себе, как выходит на лёд под овации публики и танцует свой самый красивый танец. И вот, благодаря вере и упорству, Надя становится знаменитой фигуристкой. Но когда ее мечты о громких победах, красивой жизни и прекрасном принце уже, кажется, готовы исполниться, судьба преподносит ей настоящее испытание.
+										</div>
+								</div>
+							</div>
+							<div class="news">
+								<div class="pic_wrap"><img src="assets/img/moda3.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Ла Ла Ленд </div>
+									<div class="text_description">Это история любви старлетки, которая между прослушиваниями подает кофе состоявшимся кинозвездам, и фанатичного джазового музыканта, вынужденного подрабатывать в заштатных барах. Но пришедший к влюбленным успех начинает подтачивать их отношения.
+										</div>
+								</div>
+							</div>
+							</div>	
+							</li>
+							
+							<li class="menu_but" id="item8">
+								<input type="radio" name="tabs" id="tab-2">
+								<label for="tab-2" id="second">КИНО</label>
+							<div class="sub-menu" id="sub-menu2"> 
+							<div class="news">
+								<div class="pic_wrap"><img src="assets/img/film1.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Рэмбо: Последняя кровь </div>
+									<div class="text_description">Он хранил секреты всю жизнь, но пришло время взглянуть в глаза прошлому. В последний раз собраться и стать безжалостной машиной для убийства. Рэмбо снова встанет на смертельно опасный путь — путь мести, который ему придется пройти до конца</div>
+								</div>
+							</div>
+							<div class="news">
+								<div class="pic_wrap"><img src="assets/img/film2.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Джокер </div>
+									<div class="text_description">Готэм, начало 1980-х годов. Комик Артур Флек живет с больной матерью, которая с детства учит его «ходить с улыбкой». Пытаясь нести в мир хорошее и дарить людям радость, Артур сталкивается с человеческой жестокостью и постепенно приходит к выводу, что этот мир получит от него не добрую улыбку, а ухмылку злодея Джокера.</div>
+								</div>
+							</div>
+							<div class="news news_last">
+								<div class="pic_wrap"><img src="assets/img/lil_pic3.png" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Соник </div>
+									<div class="text_description">Отвязный ярко-синий ежик Соник вместе с новообретенным — человеческим — лучшим другом Томом Вачовски он знакомится со сложностями жизни на Земле и противостоит злодейскому доктору Роботнику, который хочет пленить Соника и использовать его безграничные суперсилы для завоевания мирового господства.</div>
+								</div>
+							</div>
+							</div>	
+							</li>
+						
+							<li class="menu_but" id="item9">
+								<input type="radio" name="tabs" id="tab-3">
+								<label for="tab-3" id="third">TV</label>
+							<div class="sub-menu" id="sub-menu3"> 
+							<div class="news">
+								<div class="pic_wrap"><img src="assets/img/serial1.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Бэтвумен</div>
+									<div class="text_description">Кэти Кейн — дочь владельца частной охранной компании, которую с позором выгнали из армии. Она возвращается в родной Готэм, лишенный защиты Бэтмена — Тёмный рыцарь пропал без следа три года назад. Пока в городе орудует жестокая банда, Кэти при поддержке гениального Люка Фокса вынуждена взять на себя защиту невинных и стать Бэтвумен.</div>
+								</div>
+							</div>
+							<div class="news">
+								<div class="pic_wrap"><img src="assets/img/serial2.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Одаренные</div>
+									<div class="text_description">Сюжет строится вокруг двух обычных родителей, чьи дети открывают в себе сверхъестественные способности. Семья вынуждена скрываться от правительства, недружелюбно настроенного по отношению к юным мутантам, и присоединяется к подпольной организации суперлюдей.</div>
+								</div>
+							</div>
+							<div class="news news_last">
+								<div class="pic_wrap"><img src="assets/img/serial3.jpg" alt=""></div>
+								<div class="text_wrap">
+									<div class="blue">Бестыжие</div>
+									<div class="text_description">Американский ремейк британского сериала, повествующий о взбалмошной многодетной семье Галлахеров и их соседях, которые веселятся, попадают в самые невероятные ситуации и пытаются выжить в этом мире всеми возможными средствами, но при этом как можно меньше работая.</div>
+								</div>
+							</div>
+						</div>	
+							</li>
+						</ul>
+						
+						
+					
+						
+						<div class="sub_wrap"></div>
+						
+					</div> <!-- переключающаяся штука -->
+					
+					
+					<div class="like_label"><div>ПОНРАВИЛОСЬ ПОСЕТИТЕЛЯМ</div></div>
+					<div class="sub-menu2"> 
+							<div class="news2 news2_first">
+								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
+								<div class="text_wrap2">
+									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
+								</div>
+							</div>
+							<div class="news2">
+								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
+								<div class="text_wrap2">
+									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
+								</div>
+							</div>
+							<div class="news2">
+								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
+								<div class="text_wrap2">
+									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
+								</div>
+							</div>
+							<div class="news2">
+								<div class="pic_wrap2"><div class="ramka2"></div><img src="assets/img/lil_pic2.png" alt=""></div>
+								<div class="text_wrap2">
+									<div>Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br><br><a href="#">Medication »</a></div>
+								</div>
+							</div>
+					</div>
+				</aside>
+			</div>	
+		</div>	
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 <script> /* начало скрипта */
+        $('.text_description').click(function(){
+            $(this).toggleClass('active')
+        })
+       
+    </script> 
+	<script>	
+			/*$('.gamb').click(function(){
+			$(this).toggleClass('active')
+		})*/
+		
+		
+		
+		
+		$(function(){
+	
+	$('.gamb').on('click', function(){
+		
+		$('.menuwit').slideToggle(300, function(){
+			
+			if($(this).css('display') === 'none'){
+				$(this).removeAttr('style');
+		}
+		
+	});
+	
+ });
+	
+});
+	</script>
+	
+	
+</body>
+</html>
